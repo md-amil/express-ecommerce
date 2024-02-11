@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
   mongoose.Promise = global.Promise;
 
-const mongoURI = "mongodb://localhost:27018/ecommerce";
+const mongoURI = "mongodb://localhost:27017/ecommerce";
 mongoose
   .connect(mongoURI, {
     // useNewUrlParser: true,
@@ -15,5 +15,5 @@ mongoose
     process.exit();
   });
 
-  const connection = mongoose.connection;
+const connection = mongoose.connection;
 export default connection;

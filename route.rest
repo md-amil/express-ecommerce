@@ -7,13 +7,12 @@ POST http://localhost:3000/products
 Content-Type: application/json
 
 {
-    "name":"books",
-    "price":10
-
+    "name":"One Product",
+    "price":10,
+    "categoryId" : "65b7d6ed945cb7178044c4bf"
 }
 
 ###
-
 PUT http://localhost:3000/conversations/65b3dd43022501175d124507
 Content-Type: application/json
 

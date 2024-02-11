@@ -11,13 +11,18 @@ const productSchema = new Schema({
     required:true,
     default:0
   },
-  categoryId:{
-    type:Schema.Types.ObjectId
-  }
+
+}, {
+  toJSON: { virtuals: true ,  versionKey:false,}
 });
 
-// videoSchema.methods.findBucket = function (cb: any) {
-//     return cred.findById(this.bucket_id);
-// };
+productSchema.virtual('categories', {
+  ref: 'ProductCategory',
+  localField: '_id',
+  foreignField: 'productId',
+  justOne: false,
+});
+
 const productModel = mongoose.model("Product", productSchema);
 export default productModel
+
