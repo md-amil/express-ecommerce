@@ -1,7 +1,8 @@
 import mongoose from "mongoose";
   mongoose.Promise = global.Promise;
 
-const mongoURI = "mongodb://localhost:27017/ecommerce";
+const mongoURI =process.env.MONGO_URI|| "mongodb://localhost:27017/ecommerce";
+console.log({mongoURI})
 mongoose
   .connect(mongoURI, {
     // useNewUrlParser: true,

@@ -1,10 +1,7 @@
 import categoryModel from "../models/category.model"
 
 export async function get(req, res) {
-   const categories = await categoryModel.find().populate({
-    path: 'products',
-    populate: { path: 'productId' }
-  })
+   const categories = await categoryModel.find().populate('products','-categories')
    return res.json(categories)
 }
 

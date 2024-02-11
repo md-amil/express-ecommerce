@@ -6,15 +6,14 @@ const categorySchema = new Schema({
     required: true,
     default: "",
     },
-}, {
-  toJSON: { virtuals: true }
+  products:[{ type: mongoose.Schema.Types.ObjectId, ref: 'Product' }]
 });
 
-categorySchema.virtual('products', {
-  ref: 'ProductCategory',
-  localField: '_id',
-  foreignField: 'categoryId'
-});
+// categorySchema.virtual('products', {
+//   ref: 'ProductCategory',
+//   localField: '_id',
+//   foreignField: 'categoryId'
+// });
 
-const categoryModel = mongoose.model("category", categorySchema);
+const categoryModel = mongoose.model("Category", categorySchema);
 export default categoryModel

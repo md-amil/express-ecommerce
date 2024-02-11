@@ -2,6 +2,7 @@ import express from 'express'
 import bodyParser from 'body-parser'
 import routes from './routes/index.js';
 import connection from './utils/index.js';
+import 'dotenv/config'
 const app = express();
 const port = 3000;
 

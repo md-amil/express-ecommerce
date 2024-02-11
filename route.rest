@@ -1,3 +1,15 @@
+GET http://localhost:3000/categories
+###
+
+POST http://localhost:3000/categories
+Content-Type: application/json
+    
+{
+    "name":"red skull"
+}
+###
+
+
 GET http://localhost:3000/products
 Authorization: Bearer 1058824|yF9Vhc5nJSz0Fjw1hCgoYbsk9ITggbB6SENcDx9G
 ###
@@ -7,53 +19,7 @@ POST http://localhost:3000/products
 Content-Type: application/json
 
 {
-    "name":"One Product",
+    "name":"second product",
     "price":10,
-    "categoryId" : "65b7d6ed945cb7178044c4bf"
+    "categoryId" : "65c8fe21c42097d47b294622"
 }
-
-###
-PUT http://localhost:3000/conversations/65b3dd43022501175d124507
-Content-Type: application/json
-
-{
-    "name":"hello world"
-}
-###
-
-DELETE http://localhost:3000/conversations/65b3dd43022501175d124507
-###
-
-GET http://localhost:3000/messages
-
-###
-POST http://localhost:3000/posts
-Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Im5hbWUiOiJSYW5hIiwiX2lkIjoiNjUxNmZjMmFmMDhkNjdhZGI3YTY0MTk1IiwiY3JlYXRlZEF0IjoiMjAyMy0wOS0yOVQxNjozMjo0Mi41NjNaIn0sImlhdCI6MTY5NjAwNTE2Mn0.hZdnKxFH2QMs0LoyNSS8EgT5Q1CRrQbTs7zebdRQKOs
-
-{
-    "text":"hello",
-    "title":"Friend",
-    "conversationId":"6506f46365d3808696c6ef0a"
-}
-###
-POST http://localhost:3000/users
-
-###
-POST http://localhost:3000/users/verify-token
-Content-Type: application/x-www-form-urlencoded; charset=UTF-8
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Im5hbWUiOiJSYW5hIiwiX2lkIjoiNjUxNmZjMmFmMDhkNjdhZGI3YTY0MTk1IiwiY3JlYXRlZEF0IjoiMjAyMy0wOS0yOVQxNjozMjo0Mi41NjNaIn0sImlhdCI6MTY5NjAwNTE2Mn0.hZdnKxFH2QMs0LoyNSS8EgT5Q1CRrQbTs7zebdRQKOs
-
-###
-POST http://localhost:3000/posts
-Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Im5hbWUiOiJSYW5hIiwiX2lkIjoiNjUxNmZjMmFmMDhkNjdhZGI3YTY0MTk1IiwiY3JlYXRlZEF0IjoiMjAyMy0wOS0yOVQxNjozMjo0Mi41NjNaIn0sImlhdCI6MTY5NjAwNTE2Mn0.hZdnKxFH2QMs0LoyNSS8EgT5Q1CRrQbTs7zebdRQKOs
-
-{
-    "title":"Friend",
-    "text":"hello dear",
-}
-
-
-###
-GET http://localhost:3000/posts

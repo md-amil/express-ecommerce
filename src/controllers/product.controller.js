@@ -1,12 +1,8 @@
-import productModel from "../models"
+import productModel from "../models/product.model"
 import categoryModel from "../models/category.model"
-import productCategoryModel from "../models/productCategory.model"
 
 export async function get(req, res) {
-   const products = await productModel.find().populate({
-    path: 'categories',
-    populate: { path: 'categoryId' }
-  })
+   const products = await productModel.find().populate('categories','-products')
    return res.json(products)
 }
 
@@ -21,13 +17,12 @@ export async function store(req, res) {
    const product = new productModel({
       name,
       price,
+      categories:[categoryId]
    })
-   const procat = new productCategoryModel({
-      productId : product._id,
-      categoryId : categoryId,
-   })
+   const category = await categoryModel.findById(categoryId)
+   category.products.push(product._id)
+   category.save()
    await product.save()
-   await procat.save()
    return res.json(product)
 }
 
